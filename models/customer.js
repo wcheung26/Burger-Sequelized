@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     	validate: {
     		len: [1]
     	}
-    }
+    },
     eaten: {
     	type: DataTypes.BOOLEAN,
     	allowNull: false,
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Customers.associate = function(models) {
-  	Customers.hasMany(models.burger, {
+  	Customers.hasMany(models.burgers, {
   		onDelete: 'CASCADE'
   	});
   };
