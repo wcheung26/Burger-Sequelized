@@ -5,5 +5,13 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     timestamps: false
   });
+
+  burger.associate = function(models) {
+    burger.belongsTo(models.Customers, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return burger;
 };
